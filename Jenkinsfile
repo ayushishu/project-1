@@ -5,9 +5,9 @@ pipeline {
         stage('mvn clean install')
         {
             steps {
-                cd ./shopfront/
+                dir(shopfront)
                 bat 'mvn clean install'
-                archiveArtifacts artifacts: 'jar', followSymlinks: false
+                // archiveArtifacts artifacts: 'jar', followSymlinks: false
             }
         }
 
